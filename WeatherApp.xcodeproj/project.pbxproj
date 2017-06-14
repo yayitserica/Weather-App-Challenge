@@ -16,6 +16,7 @@
 		455DE8131EF17C2600A1AFB5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DE8121EF17C2600A1AFB5 /* APIClient.swift */; };
 		455DE8151EF180FF00A1AFB5 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DE8141EF180FF00A1AFB5 /* Forecast.swift */; };
 		455DE8171EF1853400A1AFB5 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DE8161EF1853400A1AFB5 /* DataStore.swift */; };
+		455DE81B1EF1926900A1AFB5 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DE81A1EF1926900A1AFB5 /* ForecastTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		455DE8121EF17C2600A1AFB5 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		455DE8141EF180FF00A1AFB5 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		455DE8161EF1853400A1AFB5 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		455DE81A1EF1926900A1AFB5 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				455DE8121EF17C2600A1AFB5 /* APIClient.swift */,
 				455DE8161EF1853400A1AFB5 /* DataStore.swift */,
 				455DE8021EF17B3600A1AFB5 /* Main.storyboard */,
+				455DE81A1EF1926900A1AFB5 /* ForecastTableViewCell.swift */,
 				455DE8051EF17B3600A1AFB5 /* Assets.xcassets */,
 				455DE8071EF17B3600A1AFB5 /* LaunchScreen.storyboard */,
 				455DE80A1EF17B3600A1AFB5 /* Info.plist */,
@@ -153,6 +156,7 @@
 				455DE8171EF1853400A1AFB5 /* DataStore.swift in Sources */,
 				455DE8111EF17BC100A1AFB5 /* Secrets.swift in Sources */,
 				455DE7FF1EF17B3600A1AFB5 /* AppDelegate.swift in Sources */,
+				455DE81B1EF1926900A1AFB5 /* ForecastTableViewCell.swift in Sources */,
 				455DE8131EF17C2600A1AFB5 /* APIClient.swift in Sources */,
 				455DE8151EF180FF00A1AFB5 /* Forecast.swift in Sources */,
 			);

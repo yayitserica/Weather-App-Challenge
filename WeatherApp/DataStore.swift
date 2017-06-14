@@ -11,7 +11,11 @@ import Foundation
 final class DataStore {
     
     static let sharedInstance = DataStore()
-    fileprivate init() {}
+    fileprivate init() {
+        getWeather {
+            print("getting weather in private init")
+        }
+    }
     
     var forecasts: [Forecast] = []
     
@@ -25,7 +29,6 @@ final class DataStore {
                 for dayDict in unwrappedPeriodsArray {
                     let newForecast = Forecast(dictionary: dayDict)
                     self.forecasts.append(newForecast)
-                    print(self.forecasts)
                 }
             }
         }
