@@ -12,9 +12,7 @@ final class DataStore {
     
     static let sharedInstance = DataStore()
     fileprivate init() {
-        getWeather {
-            print("getting weather in private init")
-        }
+        getWeather {}
     }
     
     var forecasts: [Forecast] = []

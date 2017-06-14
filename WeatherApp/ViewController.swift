@@ -28,11 +28,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch fcControl.selectedSegmentIndex {
         case 0:
             showsFahrenheit = true
-            print("F tapped")
             tableView.reloadData()
         case 1:
             showsFahrenheit = false
-            print("C tapped")
             tableView.reloadData()
         default:
             break
