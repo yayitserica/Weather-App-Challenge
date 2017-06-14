@@ -17,12 +17,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var fcControl: UISegmentedControl!
     
     let store = DataStore.sharedInstance
+    var showsFahrenheit = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fcControl.isHidden = true
         self.zipCodeLabel.text = "New York, 11101"
     }
+    
+    @IBAction func indexChanged(_ sender: Any) {
+        switch fcControl.selectedSegmentIndex {
+        case 0:
+            showsFahrenheit = true
+            print("F tapped")
+            tableView.reloadData()
+        case 1:
+            showsFahrenheit = false
+            print("C tapped")
+            tableView.reloadData()
+        default:
+            break
+        }
+    }
+    
+    
     
     // MARK: - Table View Methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,9 +55,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell", for: indexPath) as! ForecastTableViewCell
         let dailyForecast = store.forecasts[indexPath.row]
         cell.dayLabel.text = dailyForecast.dateTime
+        
+        if showsFahrenheit {
+            cell.highLabel.text = String(dailyForecast.maxTempF)
+            cell.lowLabel.text = String(dailyForecast.minTempF)
+        } else {
+            cell.highLabel.text = String(dailyForecast.maxTempC)
+            cell.lowLabel.text = String(dailyForecast.minTempC)
+        }
         cell.imageView?.image = UIImage(named: dailyForecast.icon)
-        cell.highLabel.text = String(dailyForecast.maxTempF)
-        cell.lowLabel.text = String(dailyForecast.minTempF)
+        
         cell.weatherSummarylabel.text = dailyForecast.weatherSummary
         
         return cell
