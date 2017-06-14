@@ -17,6 +17,13 @@ struct Forecast {
     var weatherSummary: String
     var icon: String
     
+    var humidity: Int
+    var feelsLikeC: Int
+    var feelsLikeF: Int
+    var uvi: Int?
+    var dewpointC: Int
+    var dewpointF: Int
+    
     init(dictionary: [String: Any]) {
         self.maxTempC = dictionary["maxTempC"] as! Int
         self.maxTempF = dictionary["maxTempF"] as! Int
@@ -33,6 +40,13 @@ struct Forecast {
         self.dateTime = "\(month)-\(day)-\(year)"
         self.weatherSummary = dictionary["weatherPrimary"] as! String
         self.icon = dictionary["icon"] as! String
+        
+        self.humidity = dictionary["humidity"] as! Int
+        self.feelsLikeC = dictionary["feelslikeC"] as! Int
+        self.feelsLikeF = dictionary["feelslikeF"] as! Int
+        self.uvi = dictionary["uvi"] as? Int
+        self.dewpointC = dictionary["dewpointC"] as! Int
+        self.dewpointF = dictionary["dewpointF"] as! Int
     }
     
 }

@@ -17,6 +17,7 @@
 		455DE8151EF180FF00A1AFB5 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DE8141EF180FF00A1AFB5 /* Forecast.swift */; };
 		455DE8171EF1853400A1AFB5 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DE8161EF1853400A1AFB5 /* DataStore.swift */; };
 		455DE81B1EF1926900A1AFB5 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DE81A1EF1926900A1AFB5 /* ForecastTableViewCell.swift */; };
+		456790AA1EF1AD9000CD5333 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456790A91EF1AD9000CD5333 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		455DE8141EF180FF00A1AFB5 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		455DE8161EF1853400A1AFB5 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		455DE81A1EF1926900A1AFB5 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		456790A91EF1AD9000CD5333 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				455DE8001EF17B3600A1AFB5 /* ViewController.swift */,
+				456790A91EF1AD9000CD5333 /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				455DE81B1EF1926900A1AFB5 /* ForecastTableViewCell.swift in Sources */,
 				455DE8131EF17C2600A1AFB5 /* APIClient.swift in Sources */,
 				455DE8151EF180FF00A1AFB5 /* Forecast.swift in Sources */,
+				456790AA1EF1AD9000CD5333 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +360,7 @@
 				455DE80F1EF17B3600A1AFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -70,6 +70,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let destination = segue.destination as? DetailViewController
+            let selectedRow = tableView.indexPathForSelectedRow?.row
+            destination?.dailyForecast = store.forecasts[selectedRow!]
+        }
+    }
+    
 }
 
 
