@@ -8,14 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UItable {
+    
+    let store = DataStore.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIClient.getWeatherAPI { (forecastJSON) in
-            print(forecastJSON)
+        
+        //DELETE THIS
+//        APIClient.getWeatherAPI { (forecastJSON) in
+//            print(forecastJSON)
+//        }
+        
+        store.getWeather { 
+            print("")
         }
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
 
