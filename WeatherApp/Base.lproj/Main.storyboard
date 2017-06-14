@@ -47,7 +47,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="t79-cg-9js">
-                                                    <rect key="frame" x="248" y="18" width="108.5" height="65"/>
+                                                    <rect key="frame" x="258" y="18" width="108.5" height="65"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rUc-OH-IQu">
                                                             <rect key="frame" x="0.0" y="0.0" width="108.5" height="27.5"/>
@@ -85,23 +85,34 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiB-wS-hUs">
-                                                    <rect key="frame" x="128" y="34" width="100" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="mom-EE-foX"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xjc-A1-ieg">
+                                                    <rect key="frame" x="118" y="22" width="130" height="56"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiB-wS-hUs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="130" height="30.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="130" id="mom-EE-foX"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r3-rf-pAb">
+                                                            <rect key="frame" x="0.0" y="35.5" width="130" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="xjc-A1-ieg" firstAttribute="leading" secondItem="RBH-Dj-D1i" secondAttribute="trailing" constant="10" id="Dq3-qp-o8s"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="RBH-Dj-D1i" secondAttribute="leading" id="KfH-WR-y44"/>
-                                                <constraint firstItem="TiB-wS-hUs" firstAttribute="centerY" secondItem="Llh-I6-QYA" secondAttribute="centerY" id="KoD-0L-ONX"/>
                                                 <constraint firstItem="t79-cg-9js" firstAttribute="top" secondItem="Llh-I6-QYA" secondAttribute="topMargin" constant="10" id="T6v-K3-5hT"/>
+                                                <constraint firstItem="t79-cg-9js" firstAttribute="leading" secondItem="xjc-A1-ieg" secondAttribute="trailing" constant="10" id="Ytp-Mt-1M5"/>
                                                 <constraint firstItem="RBH-Dj-D1i" firstAttribute="top" secondItem="Llh-I6-QYA" secondAttribute="topMargin" constant="-8" id="ZNo-a6-qLt"/>
-                                                <constraint firstItem="TiB-wS-hUs" firstAttribute="leading" secondItem="RBH-Dj-D1i" secondAttribute="trailing" constant="20" id="bqU-77-Y7T"/>
-                                                <constraint firstItem="t79-cg-9js" firstAttribute="leading" secondItem="TiB-wS-hUs" secondAttribute="trailing" constant="20" id="jGu-ga-euj"/>
+                                                <constraint firstItem="xjc-A1-ieg" firstAttribute="centerY" secondItem="Llh-I6-QYA" secondAttribute="centerY" id="eld-EL-Y0a"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -109,6 +120,7 @@
                                             <outlet property="forecastImage" destination="RBH-Dj-D1i" id="1i8-8o-6bO"/>
                                             <outlet property="highLabel" destination="5Rf-XB-pMv" id="mJr-hc-JsA"/>
                                             <outlet property="lowLabel" destination="PiI-rW-uyQ" id="4nE-4l-Tzw"/>
+                                            <outlet property="weatherSummarylabel" destination="8r3-rf-pAb" id="bzv-6Z-ptQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -137,6 +149,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fcControl" destination="GC7-7R-k8V" id="16b-dy-aFg"/>
                         <outlet property="tableView" destination="i3b-Fi-Qu0" id="eRL-Pi-dep"/>
                         <outlet property="zipCodeLabel" destination="wTL-Yc-07B" id="hlD-qT-pa8"/>
                     </connections>

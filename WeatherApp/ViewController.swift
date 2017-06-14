@@ -14,10 +14,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var fcControl: UISegmentedControl!
+    
     let store = DataStore.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fcControl.isHidden = true
         self.zipCodeLabel.text = "New York, 11101"
     }
     
@@ -38,6 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.imageView?.image = UIImage(named: dailyForecast.icon)
         cell.highLabel.text = String(dailyForecast.maxTempF)
         cell.lowLabel.text = String(dailyForecast.minTempF)
+        cell.weatherSummarylabel.text = dailyForecast.weatherSummary
         
         return cell
     }

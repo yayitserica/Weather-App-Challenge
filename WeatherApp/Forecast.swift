@@ -14,6 +14,7 @@ struct Forecast {
     var minTempC: Int
     var minTempF: Int
     var dateTime: String
+    var weatherSummary: String
     var icon: String
     
     init(dictionary: [String: Any]) {
@@ -30,6 +31,7 @@ struct Forecast {
         let day = String(dayString.characters.prefix(2))
         
         self.dateTime = "\(month)-\(day)-\(year)"
+        self.weatherSummary = dictionary["weatherPrimary"] as! String
         self.icon = dictionary["icon"] as! String
     }
     
