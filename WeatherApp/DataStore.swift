@@ -11,9 +11,7 @@ import Foundation
 final class DataStore {
     
     static let sharedInstance = DataStore()
-    fileprivate init() {
-        getWeather {}
-    }
+    fileprivate init() {}
     
     var forecasts: [Forecast] = []
     

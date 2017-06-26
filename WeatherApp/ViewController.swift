@@ -19,8 +19,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        store.getWeather { 
+            print("getting weather")
+        }
         self.zipCodeLabel.text = "Zip Code: \(Secrets.zipCode)"
-//        tableView.reloadData()
     }
     
     @IBAction func indexChanged(_ sender: Any) {
@@ -50,24 +52,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let dailyForecast = store.forecasts[indexPath.row]
         
-        DispatchQueue.main.async {
-            cell.dayLabel.text = dailyForecast.dateTime
-            cell.weatherSummarylabel.text = dailyForecast.weatherSummary
-        }
+        cell.dayLabel.text = dailyForecast.dateTime
+        cell.weatherSummarylabel.text = dailyForecast.weatherSummary
         
         cell.imageView?.image = UIImage(named: dailyForecast.icon)
         
         if self.showsFahrenheit {
-            DispatchQueue.main.async {
-                cell.highLabel.text = String(dailyForecast.maxTempF)
-                cell.lowLabel.text = String(dailyForecast.minTempF)
-            }
+            cell.highLabel.text = String(dailyForecast.maxTempF)
+            cell.lowLabel.text = String(dailyForecast.minTempF)
             
         } else {
-            DispatchQueue.main.async {
-                cell.highLabel.text = String(dailyForecast.maxTempC)
-                cell.lowLabel.text = String(dailyForecast.minTempC)
-            }
+            cell.highLabel.text = String(dailyForecast.maxTempC)
+            cell.lowLabel.text = String(dailyForecast.minTempC)
         }
         
         return cell
