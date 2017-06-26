@@ -30,6 +30,7 @@ struct Forecast {
         self.minTempC = dictionary["minTempC"] as! Int
         self.minTempF = dictionary["minTempF"] as! Int
         
+        //Format ISO Date - "dateTimeISO": "2017-06-25T07:00:00-04:00",
         let isoDateString = dictionary["dateTimeISO"] as! String
         let inputArray = isoDateString.components(separatedBy: "-")
         let year = inputArray[0]

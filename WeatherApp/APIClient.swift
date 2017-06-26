@@ -14,7 +14,7 @@ struct APIClient {
     
     static func getWeatherAPI(completion: @escaping (ForecastJSON?) -> Void) {
         
-        let url = URL(string: "http://api.aerisapi.com/forecasts/11101?client_id=\(Secrets.accessID)&client_secret=\(Secrets.secretKey)")
+        let url = URL(string: "http://api.aerisapi.com/forecasts/\(Secrets.zipCode)?client_id=\(Secrets.accessID)&client_secret=\(Secrets.secretKey)")
         
         let session = URLSession.shared
         

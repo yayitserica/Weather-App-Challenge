@@ -21,23 +21,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.zipCodeLabel.text = "New York, 11101"
+        self.zipCodeLabel.text = "Zip Code: \(Secrets.zipCode)"
     }
     
     @IBAction func indexChanged(_ sender: Any) {
         switch fcControl.selectedSegmentIndex {
         case 0:
             showsFahrenheit = true
-            tableView.reloadData()
         case 1:
             showsFahrenheit = false
-            tableView.reloadData()
         default:
             break
         }
+        tableView.reloadData()
     }
-    
-    
     
     // MARK: - Table View Methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,7 +69,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cell.highLabel.text = String(dailyForecast.maxTempC)
                 cell.lowLabel.text = String(dailyForecast.minTempC)
             }
-            
         }
         
         return cell
