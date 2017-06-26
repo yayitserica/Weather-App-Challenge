@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.zipCodeLabel.text = "Zip Code: \(Secrets.zipCode)"
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     @IBAction func indexChanged(_ sender: Any) {

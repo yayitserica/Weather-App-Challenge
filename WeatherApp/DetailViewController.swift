@@ -50,8 +50,6 @@ class DetailViewController: UIViewController {
         }
         precipUVView.layer.borderWidth = 3.0
         precipUVView.layer.borderColor = UIColor.lightGray.cgColor
-        
-    
     }
 
 }

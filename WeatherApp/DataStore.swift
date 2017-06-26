@@ -29,6 +29,7 @@ final class DataStore {
                     self.forecasts.append(newForecast)
                 }
             }
+            completion()
         }
     }
 }
