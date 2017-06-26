@@ -51,19 +51,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell", for: indexPath) as! ForecastTableViewCell
-        let dailyForecast = store.forecasts[indexPath.row]
-        cell.dayLabel.text = dailyForecast.dateTime
         
-        if showsFahrenheit {
+        let dailyForecast = store.forecasts[indexPath.row]
+        
+        DispatchQueue.main.async {
+            
+            cell.imageView?.image = UIImage(named: dailyForecast.icon)
+            
+        }
+        
+        cell.dayLabel.text = dailyForecast.dateTime
+        cell.weatherSummarylabel.text = dailyForecast.weatherSummary
+        if self.showsFahrenheit {
             cell.highLabel.text = String(dailyForecast.maxTempF)
             cell.lowLabel.text = String(dailyForecast.minTempF)
         } else {
             cell.highLabel.text = String(dailyForecast.maxTempC)
             cell.lowLabel.text = String(dailyForecast.minTempC)
         }
-        cell.imageView?.image = UIImage(named: dailyForecast.icon)
-        
-        cell.weatherSummarylabel.text = dailyForecast.weatherSummary
         
         return cell
     }
