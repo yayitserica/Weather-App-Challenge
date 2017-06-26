@@ -19,7 +19,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        store.getWeather { 
+        store.getWeather {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             print("getting weather")
         }
         self.zipCodeLabel.text = "Zip Code: \(Secrets.zipCode)"
