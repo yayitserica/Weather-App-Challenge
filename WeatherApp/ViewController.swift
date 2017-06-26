@@ -55,19 +55,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dailyForecast = store.forecasts[indexPath.row]
         
         DispatchQueue.main.async {
-            
-            cell.imageView?.image = UIImage(named: dailyForecast.icon)
-            
+            cell.dayLabel.text = dailyForecast.dateTime
+            cell.weatherSummarylabel.text = dailyForecast.weatherSummary
         }
         
-        cell.dayLabel.text = dailyForecast.dateTime
-        cell.weatherSummarylabel.text = dailyForecast.weatherSummary
+        cell.imageView?.image = UIImage(named: dailyForecast.icon)
+        
         if self.showsFahrenheit {
-            cell.highLabel.text = String(dailyForecast.maxTempF)
-            cell.lowLabel.text = String(dailyForecast.minTempF)
+            DispatchQueue.main.async {
+                cell.highLabel.text = String(dailyForecast.maxTempF)
+                cell.lowLabel.text = String(dailyForecast.minTempF)
+            }
+            
         } else {
-            cell.highLabel.text = String(dailyForecast.maxTempC)
-            cell.lowLabel.text = String(dailyForecast.minTempC)
+            DispatchQueue.main.async {
+                cell.highLabel.text = String(dailyForecast.maxTempC)
+                cell.lowLabel.text = String(dailyForecast.minTempC)
+            }
+            
         }
         
         return cell
