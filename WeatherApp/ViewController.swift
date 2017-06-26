@@ -11,9 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var zipCodeLabel: UILabel!
-
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var fcControl: UISegmentedControl!
     
     let store = DataStore.sharedInstance
@@ -22,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.zipCodeLabel.text = "Zip Code: \(Secrets.zipCode)"
+        tableView.reloadData()
     }
     
     @IBAction func indexChanged(_ sender: Any) {

@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var dewPointCLabel: UILabel!
     @IBOutlet weak var precipitationLabel: UILabel!
     @IBOutlet weak var uviLabel: UILabel!
+    @IBOutlet weak var precipUVView: UIView!
     
     var dailyForecast: Forecast!
 
@@ -47,6 +48,8 @@ class DetailViewController: UIViewController {
         if let unwrappedUVI = dailyForecast.uvi {
             uviLabel.text = String(describing: unwrappedUVI)
         }
+        precipUVView.layer.borderWidth = 3.0
+        precipUVView.layer.borderColor = UIColor.lightGray.cgColor
         
     
     }
